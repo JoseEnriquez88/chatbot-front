@@ -1,15 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import "tailwindcss";
 
 :root {
   --white: #ffffff;
   --black: #171717;
   --violet: #020623;
+  --light-violet: #051272;
+  --dark-violet: #1e1f29;
+  --darker-violet: #2f0d68;
 }
 
 @theme inline {
+  /* *COLORS */
   --color-pc-white: var(--white);
   --color-pc-black: var(--black);
   --color-pc-violet: var(--violet);
+  --color-pc-violet-100: var(--light-violet);
+  --color-pc-violet-200: var(--dark-violet);
+  --color-pc-violet-300: var(--darker-violet);
+  /* *FONTS */
+  --font-pc-lato: "Lato", sans-serif;
+  --font-pc-bebas: "Bebas Neue", sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -18,3 +30,30 @@
     --foreground: #ededed;
   }
 } */
+
+.gradient-background {
+  background: linear-gradient(77deg, #020623, #051272, #1e1f29, #171717);
+  background-size: 240% 240%;
+  animation: gradient-animation 24s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
