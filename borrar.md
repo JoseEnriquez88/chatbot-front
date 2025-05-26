@@ -2,6 +2,7 @@
 
 @("deleteFavorite.js", "getFavoriteByUser.js", "postFavorite.js") | % { New-Item -ItemType File -Name $_ }
 
+
 <!-- * Crear multiples carpetas en poweshell -->
 
 @("Carpeta1", "Carpeta2", "Carpeta3") | % { New-Item -ItemType Directory -Name $_ }
