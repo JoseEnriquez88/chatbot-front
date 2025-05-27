@@ -1,12 +1,18 @@
 "use client";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
 import { addUserMessage, sendMessage } from "@/store/features/chatSlice";
 import type { AppDispatch } from "@/store/store";
 
 export default function ChatInput() {
+  const router = useRouter();
   const [input, setInput] = useState("");
   const dispatch = useDispatch<AppDispatch>();
+
+  const handleBack = () => {
+    router.push("/");
+  };
 
   const handleSend = () => {
     const trimmed = input.trim();
@@ -39,6 +45,12 @@ export default function ChatInput() {
         className="p-4 font-bold bg-pc-violet-100 hover:bg-pc-violet-300 text-white rounded-2xl shadow cursor-pointer transition-colors duration-300 ease-in-out"
       >
         Enviar
+      </button>
+      <button
+        className="p-4 font-bold bg-pc-black hover:bg-pc-violet-300 text-white rounded-2xl shadow cursor-pointer transition-colors duration-300 ease-in-out flex items-center gap-2"
+        onClick={handleBack}
+      >
+        Volver
       </button>
     </div>
   );
