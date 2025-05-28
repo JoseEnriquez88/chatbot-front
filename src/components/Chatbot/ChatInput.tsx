@@ -38,24 +38,12 @@ export default function ChatInput() {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Escribe una pregunta..."
-        className="
-          flex-grow min-w-0
-          px-4 py-3 rounded-2xl
-          bg-white/10 focus:bg-white/20
-          placeholder-white text-white font-bold
-          outline-none transition-colors duration-200
-        "
+        className="flex-grow min-w-0 px-4 py-3 rounded-2xl bg-white/10 focus:bg-white/20 placeholder-white text-white font-bold outline-none shadow-lg transition-colors duration-200"
       />
-
       <button
         type="button"
         onClick={handleSend}
-        className="
-          flex-shrink-0 px-4 py-3
-          bg-pc-violet-100 hover:bg-pc-violet-300
-          text-white font-bold rounded-2xl shadow
-          transition-colors duration-300
-        "
+        className="flex-shrink-0 px-4 py-3 bg-pc-violet-100 hover:bg-pc-violet-300 text-white font-bold rounded-2xl shadow-lg transition-colors duration-300 cursor-pointer"
       >
         Enviar
       </button>
@@ -63,12 +51,7 @@ export default function ChatInput() {
       <button
         type="button"
         onClick={handleBack}
-        className="
-          flex-shrink-0 px-4 py-3
-          bg-pc-black hover:bg-pc-violet-300
-          text-white font-bold rounded-2xl shadow
-          transition-colors duration-300 flex items-center gap-2
-        "
+        className="flex-shrink-0 px-4 py-3 bg-pc-black hover:bg-pc-violet-300 text-white font-bold rounded-2xl shadow transition-colors duration-300 flex items-center gap-2 cursor-pointer"
       >
         Volver
       </button>
