@@ -17,7 +17,7 @@ const rootReducer = combineReducers({ chat: chatReducer });
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["chat"], // persistimos solo el slice `chat`
+  whitelist: ["chat"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
