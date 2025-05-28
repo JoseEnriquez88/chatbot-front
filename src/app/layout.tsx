@@ -1,18 +1,21 @@
-import type { Metadata } from 'next'
-import Providers from './Providers'
-import './globals.css'
+import "./globals.css";
+import Providers from "./Providers";
 
-export const metadata: Metadata = {
-  title: 'Promtior Chatbot',
-  description: 'Frontend del chatbot con RAG',
-}
+export const metadata = {
+  title: "Promtior Chatbot",
+  description: "Un asistente inteligente que responde preguntas sobre Promtior",
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="es">
-      <body>
+      <body className="antialiased gradient-background">
         <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }
