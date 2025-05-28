@@ -44,7 +44,7 @@ export default function ChatInput() {
       <motion.button
         type="submit"
         whileTap={{ scale: 0.9 }}
-        className="px-4 py-3 bg-pc-violet-100 hover:bg-pc-violet-300 text-white font-bold rounded-2xl shadow-lg transition-colors duration-300"
+        className="px-4 py-3 bg-pc-violet-100 hover:bg-pc-violet-300 text-white font-bold rounded-2xl shadow-lg transition-colors duration-300 cursor-pointer"
       >
         Enviar
       </motion.button>
@@ -53,7 +53,7 @@ export default function ChatInput() {
         type="button"
         onClick={() => router.push("/")}
         whileTap={{ scale: 0.9 }}
-        className="hidden md:block px-4 py-3 bg-pc-black hover:bg-pc-violet-300 text-white font-bold rounded-2xl shadow transition-colors duration-300 gap-2"
+        className="hidden md:block px-4 py-3 bg-pc-black hover:bg-pc-violet-300 text-white font-bold rounded-2xl shadow transition-colors duration-300 gap-2 cursor-pointer"
       >
         Volver
       </motion.button>
