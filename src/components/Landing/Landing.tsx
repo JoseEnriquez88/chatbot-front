@@ -17,7 +17,7 @@ const Landing = () => {
         </p>
         <LandingButton />
       </div>
-      <Footer /> {/* Se mantiene abajo sin expandirse */}
+      <Footer />
     </div>
   );
 };
