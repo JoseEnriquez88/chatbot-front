@@ -1,3 +1,4 @@
+// store/features/chatSlice.ts
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Message } from "@/models/types";
@@ -11,7 +12,9 @@ interface ChatState {
 }
 
 const initialState: ChatState = {
-  messages: [],
+  messages: [
+    { role: "bot", text: "Hola, hazme una pregunta" }
+  ],
   loading: false,
   error: null,
 };
