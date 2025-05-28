@@ -1,10 +1,10 @@
-// app/chat/page.tsx
 "use client";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/store/store";
 import { motion } from "framer-motion";
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+
 import ChatHistory from "@/components/Chatbot/ChatHistory";
 import ChatInput from "@/components/Chatbot/ChatInput";
 
@@ -14,20 +14,21 @@ export default function ChatPage() {
 
   return (
     <motion.main
-      className="relative flex flex-col h-screen bg-pc-violet font-pc-lato text-pc-white"
+      className="relative flex flex-col h-screen bg-pc-violet font-pc-lato text-pc-white overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
       <motion.button
         onClick={() => router.back()}
-        className="fixed block md:hidden top-2 left-2 z-50 p-2 rounded-lg"
+        className="fixed block md:hidden top-4 left-4 z-50 p-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
         <IoArrowBack size={24} className="text-white" />
       </motion.button>
+
       <motion.div
         className="flex-1 overflow-y-auto px-4 py-4 pt-12"
         initial="hidden"
