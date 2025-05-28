@@ -1,10 +1,17 @@
 "use client";
+import { motion } from "framer-motion";
 import { MdArrowOutward } from "react-icons/md";
 import logo from "@/assets/logo.webp";
 import Image from "next/image";
-const Footer = () => {
+
+export default function Footer() {
   return (
-    <footer className="bg-transparent border border-solid border-gray-800 w-full h-[100px] pt-[24px] px-[8px] pb-[56px] flex flex-col items-center gap-1">
+    <motion.footer
+      className="bg-transparent border border-solid border-gray-800 w-full h-[100px] pt-[24px] px-[8px] pb-[56px] flex flex-col items-center gap-1"
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 1.2, duration: 0.6 }}
+    >
       <div className="flex items-center gap-1">
         <Image src={logo} alt="logo" loading="lazy" className="size-4" />
         <a
@@ -28,7 +35,6 @@ const Footer = () => {
           <MdArrowOutward />
         </a>
       </p>
-    </footer>
+    </motion.footer>
   );
-};
-export default Footer;
+}
