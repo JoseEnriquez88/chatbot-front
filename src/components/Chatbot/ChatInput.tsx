@@ -31,27 +31,47 @@ export default function ChatInput() {
   };
 
   return (
-    <div className="flex gap-2 font-pc-lato">
+    <form className="flex w-full gap-2 items-center font-pc-lato">
       <input
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Escribe una pregunta..."
-        className="flex-1 px-4 py-3 rounded-2xl bg-white/10 focus:bg-white/20 text-white font-bold outline-none transition-colors duration-200"
+        className="
+          flex-grow min-w-0
+          px-4 py-3 rounded-2xl
+          bg-white/10 focus:bg-white/20
+          placeholder-white text-white font-bold
+          outline-none transition-colors duration-200
+        "
       />
+
       <button
+        type="button"
         onClick={handleSend}
-        className="p-4 font-bold bg-pc-violet-100 hover:bg-pc-violet-300 text-white rounded-2xl shadow cursor-pointer transition-colors duration-300 ease-in-out"
+        className="
+          flex-shrink-0 px-4 py-3
+          bg-pc-violet-100 hover:bg-pc-violet-300
+          text-white font-bold rounded-2xl shadow
+          transition-colors duration-300
+        "
       >
         Enviar
       </button>
+
       <button
-        className="p-4 font-bold bg-pc-black hover:bg-pc-violet-300 text-white rounded-2xl shadow cursor-pointer transition-colors duration-300 ease-in-out flex items-center gap-2"
+        type="button"
         onClick={handleBack}
+        className="
+          flex-shrink-0 px-4 py-3
+          bg-pc-black hover:bg-pc-violet-300
+          text-white font-bold rounded-2xl shadow
+          transition-colors duration-300 flex items-center gap-2
+        "
       >
         Volver
       </button>
-    </div>
+    </form>
   );
 }
