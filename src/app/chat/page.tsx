@@ -1,33 +1,71 @@
+// app/chat/page.tsx
 "use client";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/store/store";
+import { motion } from "framer-motion";
+import { IoArrowBack } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 import ChatHistory from "@/components/Chatbot/ChatHistory";
 import ChatInput from "@/components/Chatbot/ChatInput";
 
 export default function ChatPage() {
-  const { loading, error } = useSelector((state: RootState) => state.chat);
+  const { loading, error } = useSelector((s: RootState) => s.chat);
+  const router = useRouter();
 
   return (
-    <main className="flex flex-col h-screen bg-pc-violet font-pc-lato text-pc-white overflow-x-hidden">
-      <div className="flex-1 overflow-y-auto px-4 py-4">
+    <motion.main
+      className="relative flex flex-col h-screen bg-pc-violet font-pc-lato text-pc-white"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.button
+        onClick={() => router.back()}
+        className="fixed block md:hidden top-2 left-2 z-50 p-2 rounded-lg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <IoArrowBack size={24} className="text-white" />
+      </motion.button>
+      <motion.div
+        className="flex-1 overflow-y-auto px-4 py-4 pt-12"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.1 } },
+        }}
+      >
         <div className="mx-auto w-full max-w-screen-lg">
           <ChatHistory />
         </div>
-      </div>
+      </motion.div>
 
       <div className="px-4 py-4">
-        <div className="mx-auto w-full max-w-screen-lg">
+        <div className="mx-auto w-full max-w-screen-lg space-y-2">
           {loading && (
-            <p className="text-sm font-bold text-pc-white mb-2">Cargando…</p>
+            <motion.p
+              className="text-sm"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ repeat: Infinity, duration: 1.2 }}
+            >
+              Cargando…
+            </motion.p>
           )}
           {error && (
-            <p className="text-sm font-bold text-red-400 mb-2">
+            <motion.p
+              className="text-sm text-red-400"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
               Error: {error}
-            </p>
+            </motion.p>
           )}
           <ChatInput />
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }
