@@ -43,7 +43,7 @@ export default function Landing() {
         </motion.h1>
         <motion.p
           variants={item}
-          className="text-center text-base md:text-xl font-pc-lato"
+          className="text-center text-base md:text-xl font-bold lg:font-medium font-pc-lato"
         >
           Un asistente inteligente que responde preguntas sobre Promtior.
         </motion.p>
