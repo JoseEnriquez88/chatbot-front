@@ -11,7 +11,7 @@ const Footer = () => {
           href="https://www.promtior.ai/"
           target="_blank"
           rel="noreferrer"
-          className="font-pc-bebas text-pc-white text-lg cursor-pointer"
+          className="font-pc-bebas text-pc-white text-lg hover:text-violet-400 transition-colors duration-300 ease-in-out cursor-pointer"
         >
           promtior
         </a>
@@ -22,7 +22,7 @@ const Footer = () => {
           href="https://enriquez-jose.vercel.app/"
           target="_blank"
           rel="noreferrer"
-          className="underline ml-1 flex items-center gap-1 transition-colors duration-300 ease-in-out cursor-pointer"
+          className="underline ml-1 flex items-center gap-1 hover:text-violet-400 transition-colors duration-300 ease-in-out cursor-pointer"
         >
           Jose Enriquez
           <MdArrowOutward />
