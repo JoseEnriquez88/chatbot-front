@@ -8,17 +8,21 @@ export default function ChatPage() {
   const { loading, error } = useSelector((state: RootState) => state.chat);
 
   return (
-    <main className="flex flex-col h-screen p-4 bg-pc-violet font-pc-lato text-pc-white md:px-[600px]">
-      <div className="flex-1 overflow-y-auto scrollbar-none rounded-md p-4 shadow md:pt-[150px]">
-        <ChatHistory />
-      </div>
-      <div className="mt-4">
-        <ChatInput />
-        {loading && (
-          <p className="text-sm text-gray-500 mt-2">Cargando respuesta...</p>
-        )}
-        {error && <p className="text-sm text-red-500 mt-2">Error: {error}</p>}
-      </div>
-    </main>
+<main className="flex flex-col h-screen bg-pc-violet font-pc-lato text-pc-white overflow-x-hidden">
+  <div className="flex-1 overflow-y-auto px-4 py-4">
+    <div className="mx-auto w-full max-w-screen-lg">
+      <ChatHistory />
+    </div>
+  </div>
+
+  <div className="px-4 py-4">
+    <div className="mx-auto w-full max-w-screen-lg">
+      {loading && <p className="text-sm text-pc-white mb-2">Cargando…</p>}
+      {error &&   <p className="text-sm text-red-400 mb-2">Error: {error}</p>}
+      <ChatInput />
+    </div>
+  </div>
+</main>
+
   );
 }
