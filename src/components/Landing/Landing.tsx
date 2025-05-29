@@ -4,24 +4,7 @@ import logo from "@/assets/logo.webp";
 import Image from "next/image";
 import LandingButton from "./LandingButton/LandingButton";
 import Footer from "../Footer/Footer";
-
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 120, damping: 16 },
-  },
-};
+import { container, item } from "@/utils/motion/motions.utilities";
 
 export default function Landing() {
   return (
