@@ -7,7 +7,7 @@ const loading = () => {
       <Image
         src={logo}
         alt="logo"
-        loading="lazy"
+        priority
         className="size-30 animate-spin"
       />
       <h1 className="font-pc-bebas font-bold text-pc-white text-4xl animate-pulse">
