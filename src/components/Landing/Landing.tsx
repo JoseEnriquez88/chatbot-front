@@ -9,7 +9,7 @@ import { container, item } from "@/utils/motion/motions.utilities";
 export default function Landing() {
   return (
     <motion.div
-      className="h-screen flex flex-col justify-between gradient-background overflow-hidden"
+      className="h-dvh flex flex-col justify-between gradient-background overflow-hidden"
       initial="hidden"
       animate="show"
       variants={container}
