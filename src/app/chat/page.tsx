@@ -14,7 +14,7 @@ export default function ChatPage() {
 
   return (
     <motion.main
-      className="relative flex flex-col h-screen bg-pc-violet font-pc-lato text-pc-white overflow-hidden"
+      className="relative flex flex-col h-dvh bg-pc-violet font-pc-lato text-pc-white overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
