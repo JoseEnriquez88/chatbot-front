@@ -2,7 +2,8 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Message } from "@/models/types";
 
-const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/chat`;
+// const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/chat`;
+const API_URL = '/api/chat';
 
 interface ChatState {
   messages: Message[];
